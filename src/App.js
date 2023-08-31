@@ -12,6 +12,7 @@ import NewAutoPage from "./pages/NewAutoPage";
 import NewAdminPage from "./pages/NewAdminPage";
 import EditUserPage from "./pages/EditUserPage";
 import EditPassPage from "./pages/EditPassPage";
+import NewUserPage from "./pages/NewUserPage";
 
 
 function App () {
@@ -26,6 +27,7 @@ function App () {
          <Route path="/register/admin" element={<NewAdminPage/>} />
          <Route path="user/:idUser/edit" element={<EditUserPage/>} />
          <Route path="user/:idUser/newpass" element={<EditPassPage/>} />
+         <Route path="register/user" element={<NewUserPage/>} /> 
 
 
          <Route path="*" element={<NotFoundPage />} />
