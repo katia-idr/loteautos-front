@@ -27,7 +27,7 @@ export const UserRegisterForm = () => {
             const newUser = { nombre, apellido1, apellido2, email, password, rfcLote };
 
             const res = await fetch(
-              `${process.env.REACT_APP_API_URL}/register/usuario`,
+              `${process.env.REACT_APP_API_URL}/register/user`,
               {
                 method: "POST",
                 headers: {
