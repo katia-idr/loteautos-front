@@ -8,6 +8,11 @@ import LoginPage from './pages/LoginPage';
 import HomePage from './pages/HomePage';
 import NotFoundPage from "./pages/NotFoundPage";
 import NewLotePage from "./pages/NewLotePage";
+import NewAutoPage from "./pages/NewAutoPage";
+import NewAdminPage from "./pages/NewAdminPage";
+import EditUserPage from "./pages/EditUserPage";
+import EditPassPage from "./pages/EditPassPage";
+
 
 function App () {
    return(
@@ -17,6 +22,11 @@ function App () {
          <Route path="/" element={<HomePage />} />
          <Route path="/login" element={<LoginPage/>} />
          <Route path="/register/lote" element={< NewLotePage/>} />
+         <Route path="/register/auto" element={<NewAutoPage/>}/>
+         <Route path="/register/admin" element={<NewAdminPage/>} />
+         <Route path="user/:idUser/edit" element={<EditUserPage/>} />
+         <Route path="user/:idUser/newpass" element={<EditPassPage/>} />
+
 
          <Route path="*" element={<NotFoundPage />} />
 

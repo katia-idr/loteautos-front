@@ -17,6 +17,7 @@ export const RegisterForm = () => {
    return(
     <>
     <p>Formulario de registro</p>
+    <p>Introduce los datos necesarios para que puedas crear una cuenta.</p>
     <form
         className="registerUserForm"
         onSubmit={async (event) => {
@@ -107,11 +108,6 @@ export const RegisterForm = () => {
 
         <button className="principal">Crear cuenta</button>
       </form>
-
-
-
-
-
     </>
    
 

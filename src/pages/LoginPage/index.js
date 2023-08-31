@@ -1,6 +1,6 @@
 import { useState } from "react"
-import { LoginForm } from "../../components/login/LoginForm"
-import { RegisterForm } from "../../components/register/RegisterForm"
+import { LoginForm } from "../../components/Login/LoginForm"
+import { RegisterForm } from "../../components/NewUser/UserRegisterForm"
 import './styles.css'
 
 export const Login = () => {

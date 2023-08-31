@@ -17,7 +17,8 @@ export const LoginForm = () => {
    return (
    
       <>
-      <p>Formulario de registro</p>
+      <p>Login</p>
+      <p>Introduce tu email y password.</p>
       <form
       className="loginForm"
          onSubmit={async (event) => {

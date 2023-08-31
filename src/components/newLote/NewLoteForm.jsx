@@ -15,7 +15,8 @@ export const NewLoteForm = () => {
    
    return(
     <>
-    <p>Formulario de registro Lotes</p>
+    <p>Formulario de registro</p>
+    <p> Llena todos los campos para guardar un lote en la base de datos.</p>
     <form
         className="newLoteForm"
         onSubmit={async (event) => {

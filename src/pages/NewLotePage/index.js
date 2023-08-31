@@ -1,4 +1,4 @@
-import { NewLoteForm } from "../../components/newLote/NewLoteForm";
+import { NewLoteForm } from "../../components/NewLote/NewLoteForm";
 
 export const NewLote = () => {
 
