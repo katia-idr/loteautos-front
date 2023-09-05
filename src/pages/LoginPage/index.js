@@ -2,6 +2,8 @@ import { useState } from "react"
 import { LoginForm } from "../../components/Login/LoginForm"
 import {  UserRegisterForm } from "../../components/NewUser/UserRegisterForm"
 import './styles.css'
+import Header from "../../components/Header"
+import Footer from "../../components/Footer"
 
 export const Login = () => {
     
@@ -14,7 +16,9 @@ export const Login = () => {
          <h1>Anabit</h1>
          {isLogin === 'login' ? (
          <>
+         <Header/>
           <LoginForm />
+          <Footer />
           <p onClick={() => setIsLogin('register')}>
             Si no tienes cuenta, regístrate.
           </p>

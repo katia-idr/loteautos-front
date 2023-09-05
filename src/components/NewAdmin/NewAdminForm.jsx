@@ -9,6 +9,9 @@ export const NewAdminForm = () => {
    const [apellido2, setApellido2] = useState("");
    const [email, setEmail] = useState("");
    const [password, setPassword] = useState("");
+   const [mensaje, setMensaje] = useState("");
+  const [mensajeError, setMensajeError] = useState("");
+
    const navigate = useNavigate();
  
     
@@ -41,10 +44,14 @@ export const NewAdminForm = () => {
              }
  
              toast.success(body.message);
-             navigate("/login");
+             setMensaje(body.message);
+            setTimeout(() => {navigate("/login")}, 3000);
+
            } catch (error) {
              console.error(error.message);
              toast.error(error.message);
+             setMensajeError(error.message);
+            setTimeout(() => { setMensajeError('') }, 2500);
            }
          }}
        >
@@ -98,6 +105,11 @@ export const NewAdminForm = () => {
  
          <button className="principal">Crear cuenta nivel Administrador</button>
        </form>
+
+       {mensajeError !== "" && <p id="mensajeError">{mensajeError}</p>}
+          
+          {mensaje !== "" && <p id="mensaje">{mensaje}</p>}
+
      </>
     
  

@@ -12,7 +12,9 @@ export const LoginForm = () => {
  
    const { setToken } = useTokenContext();
    const navigate = useNavigate();   
-
+   const [mensaje, setMensaje] = useState("");
+   const [mensajeError, setMensajeError] = useState("");
+ 
 
    return (
    
@@ -40,16 +42,20 @@ export const LoginForm = () => {
              }
    
              setToken(body.authToken);
-             toast.success(
+             setMensaje(
                "Has iniciado sesión. ¡Bienvenido a Anabit!"
              );
-             navigate("/");
+             setTimeout(() => {navigate("/")}, 2500);
            } catch (error) {
              console.error(error.message);
+             setMensajeError(error.message);
+             setTimeout(() => { setMensajeError('') }, 2500)
              toast.error(error.message);
            }
          }}
        >
+        <ul>
+          <li>
          <label htmlFor="email">Email:</label>
          <input
            id="email"
@@ -58,8 +64,9 @@ export const LoginForm = () => {
            onChange={(event) => {
              setEmail(event.target.value);
            }}
-         />
+         /></li>
    
+   <li>
          <label htmlFor="password">Password:</label>
          <input
            id="password"
@@ -69,10 +76,15 @@ export const LoginForm = () => {
              setPassword(event.target.value);
            }}
          />
+         </li>
    
+      <li>
          <button className="principal">Entrar a Anabit</button>
-   
-   
+           
+        {mensaje !== "" && <p>{mensaje}</p>}
+        {mensajeError !== "" && <p>{mensajeError}</p>}
+        </li>
+        </ul>
       </form>
       </>
 

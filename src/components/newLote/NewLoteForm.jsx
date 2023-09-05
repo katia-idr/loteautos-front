@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import { useTokenContext } from "../../Contexts/TokenContext";
+import "./styles.css";
 
 export const NewLoteForm = () => {
    
@@ -11,9 +13,13 @@ export const NewLoteForm = () => {
   const [direccion, setDireccion] = useState("");
   const [telefono, setTelefono] = useState("");
   const navigate = useNavigate();
+  const { token } = useTokenContext();
+  const [mensaje, setMensaje] = useState("");
+  const [mensajeError, setMensajeError] = useState("");
 
    
    return(
+
     <>
     <p>Formulario de registro</p>
     <p> Llena todos los campos para guardar un lote en la base de datos.</p>
@@ -31,6 +37,7 @@ export const NewLoteForm = () => {
                 method: "POST",
                 headers: {
                   "Content-Type": "application/json",
+                  "Authorization": token
                 },
                 body: JSON.stringify(newLote),
               }
@@ -41,11 +48,16 @@ export const NewLoteForm = () => {
               throw new Error(body.message);
             }
 
-            toast.success(body.message);
-            navigate("/");
+            setMensaje(body.message);
+            setTimeout(() => {navigate("/")}, 3000); 
           } catch (error) {
             console.error(error.message);
+            setMensajeError(error.message);
+            setTimeout(() => { setMensajeError('') }, 2500);
+
             toast.error(error.message);
+          
+
           }
         }}
       >
@@ -98,8 +110,9 @@ export const NewLoteForm = () => {
       </form>
 
 
-
-
+          {mensajeError !== "" && <p id="mensajeError">{mensajeError}</p>}
+          
+          {mensaje !== "" && <p id="mensaje">{mensaje}</p>}
 
     </>
    

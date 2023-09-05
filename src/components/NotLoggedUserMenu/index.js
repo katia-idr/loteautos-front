@@ -8,7 +8,7 @@ const NotLoggedUserMenu = ({ menu }) => {
           <Link to="/login">Login</Link>
         </li>
         <li className="header-li">
-          <Link to="/register/usuario">Crea una cuenta</Link>
+          <Link to="/register/user">Crea una cuenta</Link>
         </li>
       </ul>
     </nav>

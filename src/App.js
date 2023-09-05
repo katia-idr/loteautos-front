@@ -13,6 +13,8 @@ import NewAdminPage from "./pages/NewAdminPage";
 import EditUserPage from "./pages/EditUserPage";
 import EditPassPage from "./pages/EditPassPage";
 import NewUserPage from "./pages/NewUserPage";
+import UserProfilePage from "./pages/UserProfilePage";
+import ListaAutosPage from "./pages/ListaAutosPage";
 
 
 function App () {
@@ -28,6 +30,8 @@ function App () {
          <Route path="user/:idUser/edit" element={<EditUserPage/>} />
          <Route path="user/:idUser/newpass" element={<EditPassPage/>} />
          <Route path="register/user" element={<NewUserPage/>} /> 
+         <Route path="user/:idUser" element={<UserProfilePage/>}/>
+         <Route path="autos" element={<ListaAutosPage/>} />
 
 
          <Route path="*" element={<NotFoundPage />} />

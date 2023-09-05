@@ -10,7 +10,7 @@ const { token, loggedUser, setLoggedUser } = useTokenContext();
    return(
 
       <>
-      <p>Cambia tus datos y tu contraseña aquí</p>
+      <p>Cambia tus datos aquí</p>
       <main>
         {loggedUser && loggedUser.length > 0 && (
           <EditDataUserForm

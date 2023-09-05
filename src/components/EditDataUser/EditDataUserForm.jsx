@@ -7,6 +7,10 @@ const EditDataUser = ({token, loggedUser, setLoggedUser}) => {
 
 const navigate = useNavigate();
 
+const [mensaje, setMensaje] = useState("");
+  const [mensajeError, setMensajeError] = useState("");
+
+
 const {
    id,
    nombre: currentNombre,
@@ -21,7 +25,7 @@ const [newApellido1, setNewApellido1] = useState("");
 const [NewApellido2, setNewApellido2] = useState("");
 
 return(
-
+<>
 <form 
 className="editDataUserForm"
 onSubmit={async (event)=>{
@@ -35,32 +39,37 @@ onSubmit={async (event)=>{
          NewApellido2 ||
          newEmail
       )) {
-         toast.warn("¡Ups! No has introducido ningún dato nuevo.");
+         setMensaje("¡Ups! Tienes que escribir al menos un cambio.");
          return;
       }
 
-      const formData = new FormData();
+      const formData = {};
 
        if (newNombre) {
-         formData.append("nombre", newNombre);
+         //formData.append("nombre", newNombre);
+         formData.nombre=newNombre
        }
        if (newApellido1) {
-         formData.append("apellido1", newApellido1);
+         //formData.append("apellido1", newApellido1);
+         formData.apellido1=newApellido1
        }
        if (NewApellido2) {
-         formData.append("apellido2", NewApellido2);
+         //formData.append("apellido2", NewApellido2);
+         formData.apellido2=NewApellido2
        }
        if (newEmail) {
-         formData.append("email", newEmail);
+         //formData.append("email", newEmail);
+         formData.email=newEmail
        }
 
-       const res = await fetch(`${process.env.REACT_APP_API_URL}/user/${id}/data`,
+       const res = await fetch(`${process.env.REACT_APP_API_URL}/user/${id}/edit`,
        {
          method: "PUT",
          headers: {
            Authorization: token,
+           "Content-Type": "application/json"
          },
-         body: formData,
+         body: JSON.stringify(formData),
        });
 
        if (!res.ok) {
@@ -68,17 +77,16 @@ onSubmit={async (event)=>{
          throw new Error(body.message);
        }
 
-       const updatedFields = Object.fromEntries(formData);
-            setLoggedUser([
-              { ...loggedUser[0], ...updatedFields },
-              { ...loggedUser[1] },
-            ]);
             toast.success("Tus datos han sido actualizados.");
-            navigate(`/user/${id}`);
+            setMensaje("Tus datos han sido actualizados.")
+            
+            setTimeout(() => {navigate(`/user/${id}`)}, 3000);
+           
        
 } catch (error) {
    console.error(error.message);
             toast.error(error.message);
+            setMensajeError(error.message);
    
 }}}
 >
@@ -124,6 +132,12 @@ onSubmit={async (event)=>{
 
 <button className="principal">Actualizar datos</button>
 </form>
+
+          {mensajeError !== "" && <p id="mensajeError">{mensajeError}</p>}
+          
+          {mensaje !== "" && <p id="mensaje">{mensaje}</p>}
+
+</>
 
 );
 };

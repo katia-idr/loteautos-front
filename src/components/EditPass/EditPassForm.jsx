@@ -1,11 +1,15 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
+import { json, useNavigate } from "react-router-dom";
 
 
 const EditPassUser = ({token, loggedUser, setLoggedUser}) => {
 
 const navigate = useNavigate();
+
+const [mensaje, setMensaje] = useState("");
+const [mensajeError, setMensajeError] = useState("");
+
 
 const {
    id,
@@ -15,7 +19,7 @@ const [newPass, setNewPass] = useState("");
 const [oldPass, setOldPass] = useState("");
 
 return(
-
+<>
 <form 
 className="editPassUserForm"
 onSubmit={async (event)=>{
@@ -27,27 +31,32 @@ onSubmit={async (event)=>{
          newPass ||
          oldPass
       )) {
-         toast.warn("¡Ups! No has introducido ningún dato nuevo.");
+         setMensajeError("¡Ups! No has introducido ningún dato nuevo.");
+         setTimeout(() => { setMensajeError('') }, 2500);
          return;
       }
 
-      const formData = new FormData();
+      const formData = {};
 
        if (newPass) {
-         formData.append("newPass", newPass);
+         //formData.append("newPass", newPass);
+         formData.newPass=newPass
        }
        if (oldPass) {
-         formData.append("oldPass", oldPass);
+         //formData.append("oldPass", oldPass);
+         formData.oldPass = oldPass
        }
        
+       console.log(formData);
 
        const res = await fetch(`${process.env.REACT_APP_API_URL}/user/${id}/newpass`,
        {
          method: "PUT",
          headers: {
            Authorization: token,
+           "Content-Type": "application/json"
          },
-         body: formData,
+         body: JSON.stringify(formData),
        });
 
        if (!res.ok) {
@@ -55,22 +64,23 @@ onSubmit={async (event)=>{
          throw new Error(body.message);
        }
 
-       const updatedFields = Object.fromEntries(formData);
-            setLoggedUser([
-              { ...loggedUser[0], ...updatedFields },
-              { ...loggedUser[1] },
-            ]);
             toast.success("Tu contraseña fue actualizada");
-            navigate(`/user/${id}`);
+            setMensaje("Tu contraseña fue actualizada.")
+
+            setTimeout(() => {navigate(`/user/${id}`)}, 2500); 
+           
        
 } catch (error) {
    console.error(error.message);
-            toast.error(error.message);
+   toast.error(error.message);
+   setMensajeError(error.message);
+   setTimeout(() => { setMensajeError('') }, 2500);
+
    
 }}}
 >
       
-      <label htmlFor="oldPass">Password anterior:</label>
+      <label htmlFor="oldPass">Password actual:</label>
         <input
           type="password"
           id="oldPass"
@@ -94,6 +104,12 @@ onSubmit={async (event)=>{
 
 <button className="principal">Actualizar contraseña</button>
 </form>
+
+ {mensajeError !== "" && <p id="mensajeError">{mensajeError}</p>}
+          
+ {mensaje !== "" && <p id="mensaje">{mensaje}</p>}
+
+ </>
 
 );
 };

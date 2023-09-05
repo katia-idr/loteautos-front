@@ -10,7 +10,13 @@ export const UserRegisterForm = () => {
   const [apellido2, setApellido2] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [rfcLote, setRfcLote] = useState("");
+  const [rfc, setRfc] = useState("");
+  const [mensaje, setMensaje] = useState("");
+  const [mensajeError, setMensajeError] = useState("");
+
+
+
+
   const navigate = useNavigate();
 
    
@@ -24,7 +30,7 @@ export const UserRegisterForm = () => {
           try {
             event.preventDefault();
 
-            const newUser = { nombre, apellido1, apellido2, email, password, rfcLote };
+            const newUser = { nombre, apellido1, apellido2, email, password, rfc};
 
             const res = await fetch(
               `${process.env.REACT_APP_API_URL}/register/user`,
@@ -43,10 +49,13 @@ export const UserRegisterForm = () => {
             }
 
             toast.success(body.message);
-            navigate("/login");
+            setMensaje(body.message)
+            setTimeout(() => {navigate("/login")}, 3000);
           } catch (error) {
             console.error(error.message);
             toast.error(error.message);
+            setMensajeError(error.message);
+            setTimeout(() => { setMensajeError('') }, 2500)
           }
         }}
       >
@@ -100,14 +109,20 @@ export const UserRegisterForm = () => {
          <label htmlFor="rfcLote">RFC Lote:</label>
         <input
           id="rfcLote"
-          value={rfcLote}
+          value={rfc}
           onChange={(event) => {
-            setRfcLote(event.target.value);
+            setRfc(event.target.value);
           }}
         />
 
         <button className="principal">Crear cuenta</button>
       </form>
+
+      {mensajeError !== "" && <p id="mensajeError">{mensajeError}</p>}
+          
+          {mensaje !== "" && <p id="mensaje">{mensaje}</p>}
+
+
     </>
    
 

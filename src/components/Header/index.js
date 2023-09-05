@@ -26,6 +26,7 @@ const Header = ({ setSearchParams, searchParams }) => {
           className="header-logo "
           src={logoAnabit}
           alt="Logo Anabit"
+          width={300}
         />
       </Link>
       
