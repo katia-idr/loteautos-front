@@ -1,7 +1,6 @@
 import { useState } from "react"
-import { LoginForm } from "../../components/Login/LoginForm"
+import { LoginForm } from "../../components/login/LoginForm"
 import {  UserRegisterForm } from "../../components/NewUser/UserRegisterForm"
-import './styles.css'
 import Header from "../../components/Header"
 import Footer from "../../components/Footer"
 
