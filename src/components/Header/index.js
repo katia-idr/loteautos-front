@@ -30,27 +30,6 @@ const Header = ({ setSearchParams, searchParams }) => {
         />
       </Link>
       
-
-      <button
-        type="button"
-        className="header-button"
-        onClick={() => {
-          navigate("/");
-        }}
-      >
-        <HomeIcon />
-      </button>
-      <button onClick={toggleMenu} className="header-button">
-        <MenuIcon />
-      </button>
-      {!token && <NotLoggedUserMenu menu={menu} />}
-      {token && loggedUser.length > 0 && (
-        <LoggedUserMenu
-          menu={menu}
-          loggedUser={loggedUser}
-          setToken={setToken}
-        />
-      )}
     </header>
   );
 };
