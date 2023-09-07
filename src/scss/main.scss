@@ -1,11 +1,12 @@
 @import "./global";
 
 // Components
+@import "./components/layout";
 @import "./components/Header";
 @import "./components/Footer";
 
 
 
-
 // Pages
-@import "./pages/home"
+@import "./pages/home";
+@import "./pages/login";

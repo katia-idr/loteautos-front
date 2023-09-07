@@ -15,10 +15,8 @@ export const CustomTokenContextProvider = ({ children }) => {
 
     const fetchUser = async () => {
       try {
-        const decodedToken = JSON.parse(atob(token.split(".")[1]));
-
         const res = await fetch(
-          `${process.env.REACT_APP_API_URL}/user/${decodedToken.id}`,
+          `${process.env.REACT_APP_API_URL}/user`,
           { headers: { Authorization: token } }
         );
 
