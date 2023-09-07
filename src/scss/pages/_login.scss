@@ -1,7 +1,41 @@
 .login-container {
     display: flex;
-    flex-direction: column;;
+    flex-direction: column;
     width: 500px;
     margin: 0 auto;
     border: 2px solid #515256;
+    align-items: center;
+    color:#2d3455
+
+}
+
+.principal{
+    color: whitesmoke;
+    background-color: #2d3455;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    align-self: center;
+    margin: .5rem;
+}
+
+label{
+font-weight: 600;
+font-size: medium;
+display: block;
+align-self:flex-start;
+}
+
+input{
+    height: 1.5rem;
+}
+
+
+ul{
+    padding-inline-start: 0rem;
+}
+
+form {
+    justify-content: center;
 }
