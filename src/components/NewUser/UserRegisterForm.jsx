@@ -22,8 +22,8 @@ export const UserRegisterForm = () => {
    
    return(
     <>
-    <p>Formulario de registro</p>
-    <p>Introduce los datos necesarios para que puedas crear una cuenta.</p>
+    <p className="pNewUser">Introduce los datos necesarios para que puedas crear una cuenta.</p>
+
     <form
         className="registerUserForm"
         onSubmit={async (event) => {
@@ -59,6 +59,9 @@ export const UserRegisterForm = () => {
           }
         }}
       >
+
+      <ul>
+        <li>
       <label htmlFor="nombre">Nombre:</label>
         <input
           id="nombre"
@@ -66,27 +69,27 @@ export const UserRegisterForm = () => {
           onChange={(event) => {
             setNombre(event.target.value);
           }}
-        />
-
-        <label htmlFor="apellido1">Apellido Paterno:</label>
+        /></li>
+  
+        <li><label htmlFor="apellido1">Apellido Paterno:</label>
         <input
           id="apellido1"
           value={apellido1}
           onChange={(event) => {
             setApellido1(event.target.value);
           }}
-        />
+        /></li>
 
-         <label htmlFor="apellido2">Apellido Materno:</label>
+         <li><label htmlFor="apellido2">Apellido Materno:</label>
         <input
           id="apellido2"
           value={apellido2}
           onChange={(event) => {
             setApellido2(event.target.value);
           }}
-        />
+        /></li>
 
-        <label htmlFor="email">Email:</label>
+        <li><label htmlFor="email">Email:</label>
         <input
           id="email"
           type="email"
@@ -94,9 +97,9 @@ export const UserRegisterForm = () => {
           onChange={(event) => {
             setEmail(event.target.value);
           }}
-        />
+        /></li>
 
-        <label htmlFor="password">Password:</label>
+        <li><label htmlFor="password">Password:</label>
         <input
           id="password"
           type="password"
@@ -104,17 +107,17 @@ export const UserRegisterForm = () => {
           onChange={(event) => {
             setPassword(event.target.value);
           }}
-        />
+        /></li>
 
-         <label htmlFor="rfcLote">RFC Lote:</label>
+         <li><label htmlFor="rfcLote">RFC Lote:</label>
         <input
           id="rfcLote"
           value={rfc}
           onChange={(event) => {
             setRfc(event.target.value);
           }}
-        />
-
+        /></li>
+        </ul>
         <button className="principal">Crear cuenta</button>
       </form>
 
