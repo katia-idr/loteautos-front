@@ -17,6 +17,7 @@ import EditPassPage from "./pages/EditPassPage";
 import NewUserPage from "./pages/NewUserPage";
 import UserProfilePage from "./pages/UserProfilePage";
 import ListaAutosPage from "./pages/ListaAutosPage";
+import VerAuto from "./pages/VerAuto";
 
 import Layout from "./components/Layout";
 
@@ -65,6 +66,10 @@ const router = createBrowserRouter([
                 path: "/autos",
                 element: <ListaAutosPage />,
             },
+            {
+                path: "/autos/:idAuto",
+                element: <VerAuto />,
+            }
         ],
     },
     {
