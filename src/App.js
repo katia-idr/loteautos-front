@@ -1,5 +1,7 @@
+import "normalize.css";
 import "react-toastify/dist/ReactToastify.css";
-import "./App.css";
+import '@fontsource-variable/montserrat';
+import "./scss/main.scss";
 import "react-toastify/dist/ReactToastify.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
