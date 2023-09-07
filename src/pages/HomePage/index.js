@@ -1,7 +1,4 @@
-import Footer from "../../components/Footer";
-import Header from "../../components/Header";
 import logoAuto from "../../assets/images/logo_auto_2.png";
-import { Link } from "react-router-dom";
 
 function Home() {
     return (
