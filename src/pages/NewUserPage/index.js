@@ -4,7 +4,9 @@ export const NewAdminPage = () => {
 
    return(
       <>
+      <div className="container-UserRegister">
       < UserRegisterForm />
+      </div>
       </>
 
    )
