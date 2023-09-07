@@ -14,7 +14,6 @@ export const LoginForm = () => {
 
     return (
         <>
-            <p>Login</p>
             <p>Introduce tu email y password.</p>
             <form
                 className="loginForm"
@@ -81,13 +80,13 @@ export const LoginForm = () => {
                         />
                     </li>
 
-                    <li>
+                    </ul>
                         <button className="principal">Entrar a Anabit</button>
 
                         {mensaje !== "" && <p>{mensaje}</p>}
                         {mensajeError !== "" && <p>{mensajeError}</p>}
-                    </li>
-                </ul>
+                    
+
             </form>
         </>
     );

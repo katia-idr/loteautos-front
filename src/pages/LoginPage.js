@@ -11,7 +11,7 @@ export const Login = () => {
                 <>
                     <LoginForm />
                     <p onClick={() => setIsLogin("register")}>
-                        Si no tienes cuenta, regístrate.
+                        Si no tienes cuenta, <strong>regístrate</strong>.
                     </p>
                 </>
             ) : (
