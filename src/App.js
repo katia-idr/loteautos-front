@@ -76,7 +76,9 @@ const router = createBrowserRouter([
 function App() {
     return (
         <CustomTokenContextProvider>
-            <RouterProvider router={router} />
+            <div className="main">
+                <RouterProvider router={router} />
+            </div>
         </CustomTokenContextProvider>
     );
 }

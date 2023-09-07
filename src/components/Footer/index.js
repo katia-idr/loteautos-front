@@ -1,9 +1,11 @@
 const Footer = () => {
-  return (
-    <footer className='footer'>
-      <p>© Anabit 2023</p>
-    </footer>
-  )
-}
+    return (
+        <div className="footer-container">
+            <footer className="footer">
+                <p>© Anabit 2023</p>
+            </footer>
+        </div>
+    );
+};
 
-export default Footer
+export default Footer;
