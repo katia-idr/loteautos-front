@@ -118,3 +118,5 @@ export const NewLoteForm = () => {
    
 
 )};
+
+export default NewLoteForm;
