@@ -27,6 +27,10 @@ const router = createBrowserRouter([
         element: <LoginPage />,
     },
     {
+        path: "/register/admin",
+        element: <NewAdminPage/>
+    },
+    {
         path: "/",
         element: <Layout />,
         children: [
@@ -41,10 +45,6 @@ const router = createBrowserRouter([
             {
                 path: "/register/auto",
                 element: <NewAutoPage />,
-            },
-            {
-                path: "/register/admin",
-                element: <NewAdminPage />,
             },
             {
                 path: "/user/:idUser/edit",

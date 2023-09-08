@@ -5,7 +5,7 @@ import { useTokenContext } from "../Contexts/TokenContext";
 
 const formatter = new Intl.NumberFormat("es-ES", {
     style: "currency",
-    currency: "EUR",
+    currency: "MXN",
 });
 
 const VerAuto = () => {
