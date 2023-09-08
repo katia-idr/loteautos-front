@@ -24,3 +24,28 @@
         display: flex;
     }
 }
+
+.menu-home {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    gap: 10px;
+    
+}
+
+.menu-home img {
+    width: 180px;
+    height: auto;    
+    padding-bottom: 0rem;
+    margin-bottom: -5rem;
+}
+
+.iconoMenu {
+    flex-shrink: 2;
+    flex-grow: 4;
+    align-self: auto;
+    text-align: center;
+    margin-bottom: 3rem;
+}
