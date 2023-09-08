@@ -21,8 +21,7 @@ export const NewLoteForm = () => {
    return(
 
     <>
-    <p>Formulario de registro</p>
-    <p> Llena todos los campos para guardar un lote en la base de datos.</p>
+    <p className="pnewlote"> Llena todos los campos para guardar un lote en la base de datos.</p>
     <form
         className="newLoteForm"
         onSubmit={async (event) => {
@@ -61,50 +60,52 @@ export const NewLoteForm = () => {
           }
         }}
       >
-      <label htmlFor="nombre">Nombre:</label>
+      <ul>
+      <li><label htmlFor="nombre">Nombre:</label>
         <input
           id="nombre"
           value={nombre}
           onChange={(event) => {
             setNombre(event.target.value);
           }}
-        />
+        /></li>
 
-        <label htmlFor="razonsocial">Razón Social:</label>
+<li><label htmlFor="razonsocial">Razón Social:</label>
         <input
           id="razonsocial"
           value={razonsocial}
           onChange={(event) => {
             setRazonsocial(event.target.value);
           }}
-        />
+        /></li>
 
-         <label htmlFor="rfc">RFC:</label>
+<li><label htmlFor="rfc">RFC:</label>
         <input
           id="rfc"
           value={rfc}
           onChange={(event) => {
             setRfc(event.target.value);
           }}
-        />
+        /></li>
 
-        <label htmlFor="direccion">Dirección:</label>
+<li><label htmlFor="direccion">Dirección:</label>
         <input
           id="direccion"
           value={direccion}
           onChange={(event) => {
             setDireccion(event.target.value);
           }}
-        />
+        /></li>
 
-        <label htmlFor="telefono">Teléfono:</label>
+<li><label htmlFor="telefono">Teléfono:</label>
         <input
           id="telefono"
           value={telefono}
           onChange={(event) => {
             setTelefono(event.target.value);
           }}
-        />
+        /></li>
+        </ul>
 
         <button className="principal">Registrar Lote</button>
       </form>
@@ -118,3 +119,5 @@ export const NewLoteForm = () => {
    
 
 )};
+
+export default NewLoteForm;

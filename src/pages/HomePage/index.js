@@ -1,14 +1,11 @@
-import Footer from "../../components/Footer"
-import Header from "../../components/Header"
+
+import HomePageMenu from "../../components/HomePageMenu";
 
 
 function Home() {
-  return (
-    <div className="HomePage">
-     <Header/>
-     <Footer/>
-    </div>
-  );
+    return (
+        < HomePageMenu/>
+    );
 }
 
 export default Home;

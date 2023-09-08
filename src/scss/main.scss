@@ -1,0 +1,17 @@
+@import "./global";
+
+// Components
+@import "./components/layout";
+@import "./components/Header";
+@import "./components/Footer";
+
+
+
+// Pages
+@import "./pages/home";
+@import "./pages/login";
+@import "./pages/autos";
+@import "./pages/newUser";
+@import "./pages/newAuto";
+@import "./pages/newLote";
+@import "./pages/newAdmin";

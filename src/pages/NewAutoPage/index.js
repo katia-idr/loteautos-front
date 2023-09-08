@@ -1,16 +1,13 @@
-import AutoForm from "../../components/NewAuto/AutoForm"
-
+import AutoForm from "../../components/NewAuto/AutoForm";
 
 export const NewAutoPage = () => {
-
-   return(
-      <>
-      < AutoForm />
-      </>
-
-   )
-
-
+    return (
+        <>
+            <div className="newautopage">
+                <AutoForm />
+            </div>
+        </>
+    );
 };
 
 export default NewAutoPage;

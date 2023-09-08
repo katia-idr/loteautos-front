@@ -17,8 +17,7 @@ export const NewAdminForm = () => {
     
     return(
      <>
-     <p>Formulario de registro</p>
-     <p>Introduce los datos necesarios para que puedas crear una cuenta de administrador.</p>
+     <p className="pnewadmin">Introduce los datos necesarios para que puedas crear una cuenta de administrador.</p>
      <form
          className="registerAdminForm"
          onSubmit={async (event) => {
@@ -55,34 +54,35 @@ export const NewAdminForm = () => {
            }
          }}
        >
-       <label htmlFor="nombre">Nombre:</label>
+        <ul>
+       <li><label htmlFor="nombre">Nombre:</label>
          <input
            id="nombre"
            value={nombre}
            onChange={(event) => {
              setNombre(event.target.value);
            }}
-         />
+         /></li>
  
-         <label htmlFor="apellido1">Apellido Paterno:</label>
+         <li><label htmlFor="apellido1">Apellido Paterno:</label>
          <input
            id="apellido1"
            value={apellido1}
            onChange={(event) => {
              setApellido1(event.target.value);
            }}
-         />
+         /></li>
  
-          <label htmlFor="apellido2">Apellido Materno:</label>
+ <li><label htmlFor="apellido2">Apellido Materno:</label>
          <input
            id="apellido2"
            value={apellido2}
            onChange={(event) => {
              setApellido2(event.target.value);
            }}
-         />
+         /></li>
  
-         <label htmlFor="email">Email:</label>
+ <li><label htmlFor="email">Email:</label>
          <input
            id="email"
            type="email"
@@ -90,9 +90,9 @@ export const NewAdminForm = () => {
            onChange={(event) => {
              setEmail(event.target.value);
            }}
-         />
+         /></li>
  
-         <label htmlFor="password">Password:</label>
+ <li> <label htmlFor="password">Password:</label>
          <input
            id="password"
            type="password"
@@ -100,7 +100,8 @@ export const NewAdminForm = () => {
            onChange={(event) => {
              setPassword(event.target.value);
            }}
-         />
+         /></li>
+         </ul>
 
  
          <button className="principal">Crear cuenta nivel Administrador</button>

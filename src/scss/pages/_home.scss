@@ -1,0 +1,51 @@
+.HomePage{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    .header-container{
+        width: 100%;
+        
+
+    }
+    .img-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        img{
+            width: 30%;
+            height: 30%;
+        }
+        h1{
+            color: #2e3456;
+        }
+    }
+    .footer-container{
+        display: flex;
+    }
+}
+
+.menu-home {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    gap: 10px;
+    
+}
+
+.menu-home img {
+    width: 180px;
+    height: auto;    
+    padding-bottom: 0rem;
+    margin-bottom: -5rem;
+}
+
+.iconoMenu {
+    flex-shrink: 2;
+    flex-grow: 4;
+    align-self: auto;
+    text-align: center;
+    margin-bottom: 3rem;
+}

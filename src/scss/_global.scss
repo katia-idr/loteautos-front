@@ -1,0 +1,38 @@
+body {
+    display: flex;
+    font-family: 'Montserrat Variable', sans-serif;
+ }
+ 
+ ul {
+    list-style: none;
+ }
+ 
+ li {
+    padding: 0.5rem;
+ }
+
+ .principal{
+   color: whitesmoke;
+   background-color: #2d3455;
+   padding-right: 1rem;
+   padding-left: 1rem;
+   padding-top: .5rem;
+   padding-bottom: .5rem;
+   align-self: center;
+   margin: .5rem;
+   display: block;
+}
+
+.logo-img-container{
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: center;
+}
+
+.logo-img-container img{
+   width: 300px;
+   padding: 3rem;
+   align-self: center;
+}
+ 
