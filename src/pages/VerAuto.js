@@ -78,13 +78,37 @@ const VerAuto = () => {
                 <div className="right">
                     <ul>
                         <li>Placas: {auto.product.placa}</li>
-                        <li>Entidad de emplacado: {auto.product.entidadplaca}</li>
+                        <li>
+                            Entidad de emplacado: {auto.product.entidadplaca}
+                        </li>
                         <li>VIN: {auto.product.vin}</li>
-                        <li style={{ marginTop: '10px' }}>Tipo de adquisicion: {auto.product.adquisicion}</li>
+                        <li style={{ marginTop: "10px" }}>
+                            Tipo de adquisicion: {auto.product.adquisicion}
+                        </li>
                         <li>Comentario: {auto.product.comentarios}</li>
                     </ul>
                 </div>
             </div>
+
+            {auto?.photos?.length > 0 && (
+                <>
+                    <h2>Fotos</h2>
+                    <div className="images">
+                        {auto.photos.map((photo) => (
+                            <a
+                                href={`${process.env.REACT_APP_API_URL}/${photo.name}`}
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                <img
+                                    src={`${process.env.REACT_APP_API_URL}/${photo.name}`}
+                                    alt=""
+                                />
+                            </a>
+                        ))}
+                    </div>
+                </>
+            )}
         </div>
     );
 };
