@@ -7,114 +7,111 @@ import inventario from "../../assets/images/inventario.png";
 import publicaciones from "../../assets/images/publicaciones.png";
 import seguimiento from "../../assets/images/seguimiento.png";
 import verificaciones from "../../assets/images/verificaciones.png";
+import { useTokenContext } from "../../Contexts/TokenContext";
 
+const HomePageMenu = () => {
+    const { loggedUser } = useTokenContext();
 
+    if (loggedUser?.tipo === "admin") {
+        return (
+            <div className="HomePage">
+                <div className="menu-home">
+                    <div className="iconoMenu">
+                        <Link to="/register/lote">
+                            <img src={acceso} alt="Anabit Logo" />
+                        </Link>
+                        <p>Registro Lotes</p>
+                    </div>
 
-const HomePageMenu = ({ menu, setToken, loggedUser }) => {
+                    <div className="iconoMenu">
+                        <img src={comisiones} alt="Anabit Logo" />
+                        <p>Comisiones</p>
+                    </div>
 
-   console.log(loggedUser[0])
+                    <div className="iconoMenu">
+                        <img src={contratos} alt="Anabit Logo" />
+                        <p>Contratos</p>
+                    </div>
 
-  const loggedUserInfo = loggedUser[0];
-  const { id } = loggedUserInfo;
+                    <div className="iconoMenu">
+                        <Link to="/register/auto">
+                            <img src={cotizaciones} alt="Anabit Logo" />
+                        </Link>
+                        <p>Registro vehículos</p>
+                    </div>
 
-  if (loggedUser[0].tipo === 'admin') {
-    return (
-      <div className="HomePage">
-            <div className="menu-home">
+                    <div className="iconoMenu">
+                        <Link to="/autos">
+                            <img src={inventario} alt="Anabit Logo" />
+                        </Link>
+                        <p>Gestión de Inventario</p>
+                    </div>
 
-            <div className="iconoMenu">
-            <Link to="/register/lote"><img src={ acceso } alt="Anabit Logo" /></Link>
-            <p>Registro Lotes</p>
+                    <div className="iconoMenu">
+                        <img src={publicaciones} alt="Anabit Logo" />
+                        <p>Publicaciones</p>
+                    </div>
+
+                    <div className="iconoMenu">
+                        <img src={seguimiento} alt="Anabit Logo" />
+                        <p>Seguimiento a créditos</p>
+                    </div>
+
+                    <div className="iconoMenu">
+                        <img src={verificaciones} alt="Anabit Logo" />
+                        <p>Verificaciones</p>
+                    </div>
+                </div>
             </div>
-            
-            <div className="iconoMenu">
-            <img src={ comisiones } alt="Anabit Logo" />
-            <p>Comisiones</p>
+        );
+    }
+
+    if (loggedUser?.tipo === "user") {
+        return (
+            <div className="HomePage">
+                <div className="menu-home">
+                    <div className="iconoMenu">
+                        <img src={comisiones} alt="Anabit Logo" />
+                        <p>Comisiones</p>
+                    </div>
+
+                    <div className="iconoMenu">
+                        <img src={contratos} alt="Anabit Logo" />
+                        <p>Contratos</p>
+                    </div>
+
+                    <div className="iconoMenu">
+                        <Link to="/register/auto">
+                            <img src={cotizaciones} alt="Anabit Logo" />
+                        </Link>
+                        <p>Registro vehículos</p>
+                    </div>
+
+                    <div className="iconoMenu">
+                        <Link to="/autos">
+                            <img src={inventario} alt="Anabit Logo" />
+                        </Link>
+                        <p>Gestión de Inventario</p>
+                    </div>
+
+                    <div className="iconoMenu">
+                        <img src={publicaciones} alt="Anabit Logo" />
+                        <p>Publicaciones</p>
+                    </div>
+
+                    <div className="iconoMenu">
+                        <img src={seguimiento} alt="Anabit Logo" />
+                        <p>Seguimiento a créditos</p>
+                    </div>
+
+                    <div className="iconoMenu">
+                        <img src={verificaciones} alt="Anabit Logo" />
+                        <p>Verificaciones</p>
+                    </div>
+                </div>
             </div>
-
-            <div className="iconoMenu">
-            <img src={ contratos } alt="Anabit Logo" />
-            <p>Contratos</p>
-            </div>
-
-            <div className="iconoMenu">
-            <Link to="/register/auto"><img src={ cotizaciones } alt="Anabit Logo" /></Link>
-            <p>Registro vehículos</p>
-            </div>
-
-            <div className="iconoMenu">
-            <Link to="/autos"><img src={ inventario } alt="Anabit Logo" /></Link>
-            <p>Gestión de Inventario</p>
-            </div>
-
-            <div className="iconoMenu">
-            <img src={ publicaciones } alt="Anabit Logo" />
-            <p>Publicaciones</p>
-            </div>
-
-            <div className="iconoMenu">
-            <img src={ seguimiento } alt="Anabit Logo" />
-            <p>Seguimiento a créditos</p>
-            </div>
-
-            <div className="iconoMenu">
-            <img src={ verificaciones } alt="Anabit Logo" />
-            <p>Verificaciones</p>
-            </div>
-
-            </div>
-        </div>       
-      );
-    };
-
-
-
-  if (loggedUser[0].tipo === 'user') {
-    return (
-      <div className="HomePage">
-            <div className="menu-home">
-            
-            <div className="iconoMenu">
-            <img src={ comisiones } alt="Anabit Logo" />
-            <p>Comisiones</p>
-            </div>
-
-            <div className="iconoMenu">
-            <img src={ contratos } alt="Anabit Logo" />
-            <p>Contratos</p>
-            </div>
-
-            <div className="iconoMenu">
-            <Link to="/register/auto"><img src={ cotizaciones } alt="Anabit Logo" /></Link>
-            <p>Registro vehículos</p>
-            </div>
-
-            <div className="iconoMenu">
-            <Link to="/autos"><img src={ inventario } alt="Anabit Logo" /></Link>
-            <p>Gestión de Inventario</p>
-            </div>
-
-            <div className="iconoMenu">
-            <img src={ publicaciones } alt="Anabit Logo" />
-            <p>Publicaciones</p>
-            </div>
-
-            <div className="iconoMenu">
-            <img src={ seguimiento } alt="Anabit Logo" />
-            <p>Seguimiento a créditos</p>
-            </div>
-
-            <div className="iconoMenu">
-            <img src={ verificaciones } alt="Anabit Logo" />
-            <p>Verificaciones</p>
-            </div>
-
-            </div>
-        </div>
-  );
-  }
-
-
+        );
+    }
 };
 
 export default HomePageMenu;

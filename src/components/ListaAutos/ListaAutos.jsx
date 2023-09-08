@@ -54,7 +54,7 @@ const ListaAutos = () => {
     const { token } = useTokenContext();
     const [autos, setAutos] = useState([]);
     const [search, setSearch] = useState("");
-    const debouncedSearch = useDebounce(search, 500);
+    const debouncedSearch = useDebounce(search, 300);
 
     useEffect(() => {
         const getAutos = async () => {
@@ -85,11 +85,11 @@ const ListaAutos = () => {
 
         return autos.filter((auto) => {
             return (
-                auto.marca.toLowerCase().includes(debouncedSearch.toLowerCase()) ||
-                auto.modelo.toLowerCase().includes(debouncedSearch.toLowerCase()) ||
-                auto.year.toString().includes(debouncedSearch.toLowerCase()) ||
-                auto.color.toLowerCase().includes(debouncedSearch.toLowerCase()) ||
-                auto.placa.toLowerCase().includes(debouncedSearch.toLowerCase())
+                auto.marca?.toLowerCase().includes(debouncedSearch.toLowerCase()) ||
+                auto.modelo?.toLowerCase().includes(debouncedSearch.toLowerCase()) ||
+                auto.year?.toString().includes(debouncedSearch.toLowerCase()) ||
+                auto.color?.toLowerCase().includes(debouncedSearch.toLowerCase()) ||
+                auto.placa?.toLowerCase().includes(debouncedSearch.toLowerCase())
             );
         });
     }, [autos, debouncedSearch]);
