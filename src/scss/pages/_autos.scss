@@ -1,0 +1,10 @@
+.filter-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+
+    input {
+        margin-left: 10px;
+        outline: 0;
+    }
+}
