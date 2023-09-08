@@ -5,7 +5,9 @@ export const NewAutoPage = () => {
 
    return(
       <>
+      <div className="newautopage">
       < AutoForm />
+      </div>
       </>
 
    )

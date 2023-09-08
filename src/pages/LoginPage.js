@@ -1,11 +1,16 @@
 import { useState } from "react";
 import  LoginForm  from "../components/Login/LoginForm";
 import { UserRegisterForm } from "../components/NewUser/UserRegisterForm";
+import LogoAnabit from "../assets/images/logo-anabit.jpg"
 
 export const Login = () => {
     const [isLogin, setIsLogin] = useState("login");
 
     return (
+        <>
+        <div className="logo-img-container">
+                <img src={ LogoAnabit } alt="Anabit Logo" />
+            </div>
         <div className="login-container">
             {isLogin === "login" ? (
                 <>
@@ -21,6 +26,7 @@ export const Login = () => {
                 </>
             )}
         </div>
+        </>
     );
 };
 

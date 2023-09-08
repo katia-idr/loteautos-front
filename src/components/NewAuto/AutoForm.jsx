@@ -71,8 +71,7 @@ export const AutoForm = () => {
    
    return(
     <>
-    <p>Registro de vehículos</p>
-    <p>Introduce los datos necesarios para agregar un vehículo a la base de datos.</p>
+    <p className="pnewauto">Introduce los datos necesarios para agregar un vehículo a la base de datos.</p>
     <form id="datosAuto"
         className="AutoForm"
         onSubmit={async (event) => {
@@ -86,6 +85,17 @@ export const AutoForm = () => {
               formData.append('modelo',modelo)
               formData.append('year', year)
               formData.append('version',version)
+              formData.append('tipo',tipo)
+              formData.append('color',color)
+              formData.append('puertas',puertas)
+              formData.append('dobletraccion',dobletraccion)
+              formData.append('kilometraje',kilometraje)
+              formData.append('adquisicion',adquisicion)
+              formData.append('entidadplaca',entidadplaca)
+              formData.append('fechaadqui',fechaadqui)
+              formData.append('preciocompra',preciocompra)
+              formData.append('precioventa',precioventa)
+              formData.append('comentarios',comentarios)
 
               for (const autoPhoto of images){
                 formData.append("autoPhoto",autoPhoto);
@@ -120,9 +130,9 @@ export const AutoForm = () => {
       >
 
 
+<ul>
 
-
-      <label htmlFor="placa">Placa:</label>
+      <li><label htmlFor="placa">Placa:</label>
         <input
           id="placa"
           size="6"
@@ -131,9 +141,9 @@ export const AutoForm = () => {
           onChange={(event) => {
             setPlaca(event.target.value);
           }}
-        />
+        /></li>
 
-        <label htmlFor="vin">VIN:</label>
+<li><label htmlFor="vin">VIN:</label>
         <input
           id="vin"
           size="17"
@@ -142,18 +152,18 @@ export const AutoForm = () => {
           onChange={(event) => {
             setVin(event.target.value);
           }}
-        />
+        /></li>
 
-         <label htmlFor="year">Año:</label>
+<li><label htmlFor="year">Año:</label>
         <input
           id="year"
           value={year}
           onChange={(event) => {
             setYear(event.target.value);
           }}
-        />
+        /></li>
 
-        <label htmlFor="marca">Marca:</label>
+<li><label htmlFor="marca">Marca:</label>
         <select onChange={(event) => {
             setMarca(event.target.value);
           }} id="marca">
@@ -210,19 +220,19 @@ export const AutoForm = () => {
             <option value="Toyota">Toyota</option>
             <option value="Volkswagen">Volkswagen</option>
             <option value="Volvo">Volvo</option>
-        </select>
+        </select></li>
        
 
-        <label htmlFor="modelo">Modelo:</label>
+       <li> <label htmlFor="modelo">Modelo:</label>
         <input
           id="modelo"
           value={modelo}
           onChange={(event) => {
             setModelo(event.target.value);
           }}
-        />
+        /></li>
 
-         <label htmlFor="version">Versión:</label>
+        <li> <label htmlFor="version">Versión:</label>
         <input
           id="version"
           value={version}
@@ -230,9 +240,9 @@ export const AutoForm = () => {
           onChange={(event) => {
             setVersion(event.target.value);
           }}
-        />
+        /></li>
 
-        <label htmlFor="motor">Motor:</label>
+        <li> <label htmlFor="motor">Motor:</label>
         <input
           id="motor"
           value={motor}
@@ -240,9 +250,9 @@ export const AutoForm = () => {
           onChange={(event) => {
             setMotor(event.target.value);
           }}
-        />
+        /></li>
 
-        <label htmlFor="tipo">Tipo:</label>
+        <li><label htmlFor="tipo">Tipo:</label>
         <select onChange={(event) => {
             setTipo(event.target.value);
           }} id="tipo">
@@ -258,10 +268,10 @@ export const AutoForm = () => {
                <option value="chasiscabina">Chasis cabina</option>
                <option value="chasisbus">Chasis bus</option>
                <option value="utilitario">Utilitario</option>
-        </select>
+        </select></li>
         
 
-        <label htmlFor="puertas">Puertas:</label>
+        <li><label htmlFor="puertas">Puertas:</label>
         <select onChange={(event) => {
             setPuertas(event.target.value);
           }} id="puertas">
@@ -271,10 +281,10 @@ export const AutoForm = () => {
           <option value="5">5</option>
           <option value="6">6</option>
           <option value="7">7</option>
-        </select>
+        </select></li>
       
 
-        <label htmlFor="color">Color:</label>
+      <li><label htmlFor="color">Color:</label>
         <select onChange={(event) => {
             setColor(event.target.value);
           }} id="color">
@@ -292,13 +302,14 @@ export const AutoForm = () => {
                      <option value="Café/Beige">Café / Beige</option>
                      <option value="Morado">Morado</option>
                      <option value="Otro">Otro</option>
-        </select>
+        </select></li>
         
 
-        <label htmlFor="dobletraccion">Doble tracción:</label>
-        <label htmlFor="dobletraccion">Si</label>
+        <li><label htmlFor="dobletraccion">Doble tracción:</label>
+        <label className="doslabel" htmlFor="dobletraccion">Si</label>
         <input
           id="dobletraccion"
+          className="inputgriddos"
           name="dobletraccion"
           value={dobletraccion}
           type="radio"
@@ -306,30 +317,33 @@ export const AutoForm = () => {
             setDobletraccion("si");
           }}
         />
-        <label htmlFor="dobletraccion">No</label>
+       
+         <label className="treslabel" htmlFor="dobletraccion">No</label>
         <input
           id="dobletraccion"
+          className="inputgridtres"
           name="dobletraccion"
           value={dobletraccion}
           type="radio"
           onChange={(event) => {
             setDobletraccion("no");
           }}
-        />
+        /></li>
 
-        <label htmlFor="kilometraje">Kilometraje:</label>
+        <li> <label htmlFor="kilometraje">Kilometraje:</label>
         <input
           id="kilometraje"
           value={kilometraje}
           onChange={(event) => {
             setKilometraje(event.target.value);
           }}
-        />
+        /></li>
 
-        <label htmlFor="adquisicion">Adquisición:</label>
-        <label htmlFor="adquisicion">Compra</label>
+        <li><label  htmlFor="adquisicion">Adquisición:</label>
+        <label className="doslabel"  htmlFor="adquisicion">Compra</label>
         <input
           id="adquisicion"
+          className="inputgriddos"
           name="adquisicion"
           value={adquisicion}
           type="radio"
@@ -338,18 +352,19 @@ export const AutoForm = () => {
           }}
         />
 
-        <label htmlFor="adquisicion">Consigna</label>
+        <label className="treslabel" htmlFor="adquisicion">Consigna</label>
         <input
           id="adquisicion"
+          className="inputgridtres"
           name="adquisicion"
           value={adquisicion}
           type="radio"
           onChange={(event) => {
             setAdquisicion("consigna");
           }}
-        />
+        /></li>
         
-        <label htmlFor="entidadplaca">Entidad Placa:</label>
+        <li> <label htmlFor="entidadplaca">Entidad Placa:</label>
         <select onChange={(event) => {
             setEntidadplaca(event.target.value);
           }} id="entidadplaca">
@@ -385,10 +400,10 @@ export const AutoForm = () => {
                     <option value="Veracruz">Veracruz</option>
                     <option value="Yucatán">Yucatán</option>
                     <option value="Zacatecas">Zacatecas</option>
-        </select>
+        </select></li>
         
 
-        <label htmlFor="fechaadqui">Fecha de adquisición:</label>
+        <li> <label htmlFor="fechaadqui">Fecha de adquisición:</label>
         <input
           id="fechaadqui"
           type="date"
@@ -396,27 +411,27 @@ export const AutoForm = () => {
           onChange={(event) => {
             setFechaadqui(event.target.value);
           }}
-        />
+        /></li>
       
-      <label htmlFor="preciocompra">Precio compra:</label>
+        <li><label htmlFor="preciocompra">Precio compra:</label>
         <input
           id="preciocompra"
           value={preciocompra}
           onChange={(event) => {
             setPreciocompra(event.target.value);
           }}
-        />
+        /></li>
 
-      <label htmlFor="precioventa">Precio venta:</label>
+        <li><label htmlFor="precioventa">Precio venta:</label>
         <input
           id="precioventa"
           value={precioventa}
           onChange={(event) => {
             setPrecioventa(event.target.value);
           }}
-        />
+        /></li>
 
-      <label htmlFor="comentarios">Comentarios:</label>
+      <li><label htmlFor="comentarios">Comentarios:</label>
         <input
           id="comentarios"
           type="textarea"
@@ -424,7 +439,8 @@ export const AutoForm = () => {
           onChange={(event) => {
             setComentarios(event.target.value);
           }}
-        />
+        /></li>
+        </ul>
 
       
 

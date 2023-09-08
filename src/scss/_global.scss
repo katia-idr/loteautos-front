@@ -23,4 +23,16 @@ body {
    display: block;
 }
 
+.logo-img-container{
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: center;
+}
+
+.logo-img-container img{
+   width: 300px;
+   padding: 3rem;
+   align-self: center;
+}
  

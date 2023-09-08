@@ -1,34 +1,15 @@
-.login-container {
+.container-UserRegister {
    display: flex;
    flex-direction: column;
    width: 500px;
    margin: 0 auto;
    border: 2px solid #515256;
    align-items: center;
-   color:#2d3455
+   color:#2d3455;
+   padding-bottom: 1.5rem;
 
 }
 
-
-label{
-font-weight: 600;
-font-size: medium;
-display: block;
-align-self:flex-start;
-}
-
-input{
-   height: 1.5rem;
-}
-
-
-ul{
-   padding-inline-start: 0rem;
-}
-
-form {
-   justify-content: center;
-}
 
 .pNewUser{
    padding-left: 3rem;
