@@ -3,6 +3,11 @@ import { useParams } from "react-router-dom";
 
 import { useTokenContext } from "../Contexts/TokenContext";
 
+const formatter = new Intl.NumberFormat("es-ES", {
+    style: "currency",
+    currency: "EUR",
+});
+
 const VerAuto = () => {
     const { idAuto } = useParams();
     const { token } = useTokenContext();
@@ -27,7 +32,7 @@ const VerAuto = () => {
                     setAuto(body.data);
                     setLoading(false);
                 }
-            }catch(error) {
+            } catch (error) {
                 console.log(error);
             }
         };
@@ -39,7 +44,49 @@ const VerAuto = () => {
 
     console.log(auto);
 
-    return <h1>Auto ID: {idAuto}</h1>;
+    return (
+        <div className="single-auto">
+            <h1>
+                {auto.product.marca} {auto.product.modelo} {auto.product.year}
+            </h1>
+
+            <div className="features">
+                <div className="left">
+                    {formatter.format(auto.product.precioventa)}
+                    <span>Precio de venta</span>
+                </div>
+                <div className="right">
+                    <ul>
+                        <li>Version: {auto.product.version}</li>
+                        <li>Motor: -</li>
+                        <li>Km: {auto.product.kilometraje}</li>
+                    </ul>
+                </div>
+                <div className="left">
+                    {formatter.format(auto.product.preciocompra)}
+                    <span>Precio de adquisicion</span>
+                </div>
+                <div className="right">
+                    <ul>
+                        <li>Color: {auto.product.color}</li>
+                        <li>Tipo: {auto.product.tipo}</li>
+                        <li>Puertas: -</li>
+                        <li>Doble traccion: {auto.product.dobletraccion}</li>
+                    </ul>
+                </div>
+                <div className="left with-bg"></div>
+                <div className="right">
+                    <ul>
+                        <li>Placas: {auto.product.placa}</li>
+                        <li>Entidad de emplacado: {auto.product.entidadplaca}</li>
+                        <li>VIN: {auto.product.vin}</li>
+                        <li style={{ marginTop: '10px' }}>Tipo de adquisicion: {auto.product.adquisicion}</li>
+                        <li>Comentario: {auto.product.comentarios}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    );
 };
 
 export default VerAuto;
