@@ -62,10 +62,12 @@ const VerAuto = () => {
                         <li><strong>Km:</strong> {auto.product.kilometraje}</li>
                     </ul>
                 </div>
-                <div className="left">
+
+                 <div className="left" id="preciocompradiv">
                     {formatter.format(auto.product.preciocompra)}
                     <span><strong>Precio de adquisicion</strong></span>
                 </div>
+
                 <div className="right">
                     <ul>
                         <li><strong>Color:</strong> {auto.product.color}</li>
@@ -74,7 +76,7 @@ const VerAuto = () => {
                         <li><strong>Doble traccion:</strong> {auto.product.dobletraccion}</li>
                     </ul>
                 </div>
-                <div className="left with-bg"></div>
+                <div className="left with-bg" id="ganancia"></div>
                 <div className="right">
                     <ul>
                         <li><strong>Placas:</strong> {auto.product.placa}</li>

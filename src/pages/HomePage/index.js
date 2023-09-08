@@ -2,9 +2,11 @@
 import HomePageMenu from "../../components/HomePageMenu";
 
 
-function Home() {
+export const Home = () => {
     return (
+        <>
         < HomePageMenu/>
+        </>
     );
 }
 
