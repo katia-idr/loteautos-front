@@ -15,9 +15,9 @@ export const Login = () => {
             {isLogin === "login" ? (
                 <>
                     <LoginForm />
-                    <p onClick={() => setIsLogin("register")}>
+                   {/* <p onClick={() => setIsLogin("register")}>
                         Si no tienes cuenta, <strong>regístrate</strong>.
-                    </p>
+                    </p> */}
                 </>
             ) : (
                 <>

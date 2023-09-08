@@ -19,7 +19,7 @@ const Header = () => {
                 </Link>
                 {loggedUser ? (
                     <button
-                        className="iniciar_sesion"
+                        className="principal"
                         onClick={logout}
                     >
                         <span>Salir</span>
