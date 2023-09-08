@@ -5,7 +5,9 @@ export const NewAdminPage = () => {
 
    return(
       <>
+      <div className="newadmin-container"> 
       < NewAdminForm />
+      </div>
       </>
 
    )
