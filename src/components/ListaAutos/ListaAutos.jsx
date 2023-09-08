@@ -17,6 +17,8 @@ const paginationComponentOptions = {
     selectAllRowsItemText: "Todos",
 };
 
+const stringSort = (a, b) => a?.toLowerCase()?.localeCompare(b.toLowerCase());
+
 const columns = [
     {
         name: "Marca / Modelo / A~no",
@@ -27,11 +29,17 @@ const columns = [
             </>
         ),
         sortable: true,
+        sortFunction: (a, b) =>
+            stringSort(
+                `${a.marca} / ${a.modelo} / ${a.year}`,
+                `${b.marca} / ${b.modelo} / ${b.year}`,
+            ),
     },
     {
         name: "Color",
         selector: (row) => row.color,
         sortable: true,
+        sortFunction: (a, b) => stringSort(a.color, b.color),
     },
     {
         name: "Precio",
@@ -47,6 +55,7 @@ const columns = [
         name: "Placas",
         selector: (row) => row.placa,
         sortable: true,
+        sortFunction: (a, b) => stringSort(a.placa, b.placa),
     },
 ];
 
@@ -85,11 +94,19 @@ const ListaAutos = () => {
 
         return autos.filter((auto) => {
             return (
-                auto.marca?.toLowerCase().includes(debouncedSearch.toLowerCase()) ||
-                auto.modelo?.toLowerCase().includes(debouncedSearch.toLowerCase()) ||
+                auto.marca
+                    ?.toLowerCase()
+                    .includes(debouncedSearch.toLowerCase()) ||
+                auto.modelo
+                    ?.toLowerCase()
+                    .includes(debouncedSearch.toLowerCase()) ||
                 auto.year?.toString().includes(debouncedSearch.toLowerCase()) ||
-                auto.color?.toLowerCase().includes(debouncedSearch.toLowerCase()) ||
-                auto.placa?.toLowerCase().includes(debouncedSearch.toLowerCase())
+                auto.color
+                    ?.toLowerCase()
+                    .includes(debouncedSearch.toLowerCase()) ||
+                auto.placa
+                    ?.toLowerCase()
+                    .includes(debouncedSearch.toLowerCase())
             );
         });
     }, [autos, debouncedSearch]);
@@ -97,10 +114,14 @@ const ListaAutos = () => {
     return (
         <>
             <div className="filter-container">
-               <label>
-                  Buscar:
-                  <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} />
-               </label>
+                <label>
+                    Buscar:
+                    <input
+                        type="text"
+                        value={search}
+                        onChange={(e) => setSearch(e.target.value)}
+                    />
+                </label>
             </div>
             <DataTable
                 columns={columns}
