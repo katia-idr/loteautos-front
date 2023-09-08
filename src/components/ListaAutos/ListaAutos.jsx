@@ -17,7 +17,7 @@ const paginationComponentOptions = {
     selectAllRowsItemText: "Todos",
 };
 
-const stringSort = (a, b) => a?.toLowerCase()?.localeCompare(b.toLowerCase());
+const stringSort = (a, b) => a?.toLowerCase()?.localeCompare(b?.toLowerCase());
 
 const columns = [
     {
