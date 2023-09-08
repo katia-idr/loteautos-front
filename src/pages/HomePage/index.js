@@ -16,7 +16,7 @@ function Home() {
 
             <div className="iconoMenu">
             <Link to="/register/lote"><img src={ acceso } alt="Anabit Logo" /></Link>
-            <p>Área Admin</p>
+            <p>Registro Lotes</p>
             </div>
             
             <div className="iconoMenu">

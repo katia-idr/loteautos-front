@@ -53,39 +53,39 @@ const VerAuto = () => {
             <div className="features">
                 <div className="left">
                     {formatter.format(auto.product.precioventa)}
-                    <span>Precio de venta</span>
+                    <span><strong>Precio de venta</strong></span>
                 </div>
                 <div className="right">
                     <ul>
-                        <li>Version: {auto.product.version}</li>
-                        <li>Motor: -</li>
-                        <li>Km: {auto.product.kilometraje}</li>
+                        <li><strong>Version:</strong> {auto.product.version}</li>
+                        <li><strong>Motor:</strong>{auto.product.motor}</li>
+                        <li><strong>Km:</strong> {auto.product.kilometraje}</li>
                     </ul>
                 </div>
                 <div className="left">
                     {formatter.format(auto.product.preciocompra)}
-                    <span>Precio de adquisicion</span>
+                    <span><strong>Precio de adquisicion</strong></span>
                 </div>
                 <div className="right">
                     <ul>
-                        <li>Color: {auto.product.color}</li>
-                        <li>Tipo: {auto.product.tipo}</li>
-                        <li>Puertas: -</li>
-                        <li>Doble traccion: {auto.product.dobletraccion}</li>
+                        <li><strong>Color:</strong> {auto.product.color}</li>
+                        <li><strong>Tipo:</strong> {auto.product.tipo}</li>
+                        <li><strong>Puertas:</strong> {auto.product.puertas}</li>
+                        <li><strong>Doble traccion:</strong> {auto.product.dobletraccion}</li>
                     </ul>
                 </div>
                 <div className="left with-bg"></div>
                 <div className="right">
                     <ul>
-                        <li>Placas: {auto.product.placa}</li>
+                        <li><strong>Placas:</strong> {auto.product.placa}</li>
                         <li>
-                            Entidad de emplacado: {auto.product.entidadplaca}
+                            <strong>Entidad de emplacado:</strong> {auto.product.entidadplaca}
                         </li>
-                        <li>VIN: {auto.product.vin}</li>
+                        <li><strong>VIN:</strong> {auto.product.vin}</li>
                         <li style={{ marginTop: "10px" }}>
-                            Tipo de adquisicion: {auto.product.adquisicion}
+                            <strong>Tipo de adquisicion:</strong> {auto.product.adquisicion}
                         </li>
-                        <li>Comentario: {auto.product.comentarios}</li>
+                        <li><strong>Comentario:</strong> {auto.product.comentarios}</li>
                     </ul>
                 </div>
             </div>
