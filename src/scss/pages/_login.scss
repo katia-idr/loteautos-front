@@ -1,7 +1,7 @@
 .login-container {
     display: flex;
     flex-direction: column;
-    width: 500px;
+    width: 95vmin;
     margin: 0 auto;
     border: 2px solid #515256;
     align-items: center;
@@ -15,6 +15,7 @@ font-weight: 600;
 font-size: medium;
 display: block;
 align-self:flex-start;
+margin-bottom: 0rem;
 }
 
 input{
@@ -23,7 +24,7 @@ input{
 
 
 ul{
-    padding-inline-start: 0rem;
+    padding-inline-start: 0.1rem;
 }
 
 form {
